@@ -354,44 +354,44 @@ const people = [
   },
 ];
 
-const dashboard = document.querySelector('table');
+const dashboard = document.querySelector('.dashboard');
 
-people.forEach((person) => {
+[...people].forEach((person) => {
   const row = document.createElement('tr');
 
   dashboard.append(row);
 
-  const personName = document.createElement('th');
+  const personName = document.createElement('td');
 
   personName.textContent = person.name;
 
   row.append(personName);
 
-  const personGender = document.createElement('th');
+  const personGender = document.createElement('td');
 
-  personGender.textContent = person.sex === 'm' ? 'Male' : 'Female';
+  personGender.textContent = person.sex;
 
   row.append(personGender);
 
-  const personBorn = document.createElement('th');
+  const personBorn = document.createElement('td');
 
   personBorn.textContent = person.born;
 
   row.append(personBorn);
 
-  const personDied = document.createElement('th');
+  const personDied = document.createElement('td');
 
   personDied.textContent = person.died;
 
   row.append(personDied);
 
-  const personAge = document.createElement('th');
+  const personAge = document.createElement('td');
 
   personAge.textContent = person.died - person.born;
 
   row.append(personAge);
 
-  const personCentury = document.createElement('th');
+  const personCentury = document.createElement('td');
 
   personCentury.textContent = Math.ceil(person.died / 100);
 
